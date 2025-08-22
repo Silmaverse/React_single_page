@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Logo from '../assets/images/logo.png'
+import { IoMdArrowDropup } from "react-icons/io";
 
 const NavBar = () => {
     const navItems = [
@@ -15,32 +16,53 @@ const NavBar = () => {
         {
             navContent: 'Contact Us',
             navpath: '/',
-            dropdown:(<div className='p-5 rounded-[5px] bg-primary  left-2 flex-col gap-5 absolute top-10 hidden group-hover:flex' >
-                              <a href="tel:56878980090">56878980090</a>
-                              <hr />
-                              <a href='mailto:jjksdkak@gmail.com'>jjksdkak@gmail.com</a>
-                          </div>)
+            dropdown: [
+                {
+                    dropContent: 'google Maps',
+                    dropLink:'/'
+                },
+                {
+                    dropContent: 'Phone',
+                    dropLink: '/'
+
+                },
+            ]
+             
         },
      
      ]
   return (
       <>
-          <nav id='Navbar' className='pt-[22px] '>
+          <nav id='Navbar' className='pt-[22px] hidden lg:block '>
               <div className="container ">
                   <div className="navRow flex justify-between">
-                      <div className="logo_col">
+                      <Link to='/' className="logo_col">
                           <img src={Logo } alt='logo' />
-                      </div>
+                      </Link>
                       <div className="menu_items flex  gap-[35px]  ">
                           {
-                              navItems.map((item ,idx) => (
-                                  <div key={idx} className={item.dropdown ? "relative group" : ""}>
-                                  
-                                      <Link to={item.navpath} className=' text-xl font-normal text-primary font-Dm'>{item.navContent}</Link>
-                                      
-                                      { item.dropdown}
-                            </div>
-                              ))
+                              navItems.map((item, idx) => {
+                                  return (
+                                      <ul >
+                                          <li className='relative group'>
+                                          
+                                              <Link to={item.navpath} className=' text-xl font-normal text-primary font-Dm'>{item.navContent}</Link>
+                                              {
+                                            item.dropdown &&
+                                                  <div className='w-[300px] p-3 rounded-[5px] bg-white absolute top-8 invisible opacity-0 group-hover:visible group-hover:opacity-100'>
+                                                          <IoMdArrowDropup className='text-3xl text-white absolute top-[-18px] left-2'/>
+                                                          <ul>
+                                                              {item.dropdown.map((item) => {
+                                                                  
+                                                                  return <li ><Link className='text-lg mb-5 inline-block font-Dm' to={item.dropLink}>{ item.dropContent}</Link></li>
+                                                            })}
+                                                  </ul>
+                                              </div>
+                                             }
+                                          </li>
+                                      </ul>
+                                  )
+                              })
                           }
                           
 
