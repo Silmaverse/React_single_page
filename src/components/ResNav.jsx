@@ -24,13 +24,13 @@ const ResNav = () => {
     const [shownav, setshownav] = useState(false);
   return (
       <>
-          <nav className='lg:hidden px-2 py-3 relative overflow-hidden h-screen '>
-              <div className="container">
+          <nav className='lg:hidden px-2 py-3 absolute top-0 left-0 w-full h-screen z-20 overflow-x-hidden '>
+              <div className="container ">
                   <div className="menu_row flex justify-between  ">
                       <Link to={'/'} className="logo inline-block w-[125px]">
                           <img src={logo} alt='logo'/>
                       </Link>
-                      <button onClick={() => setshownav(!shownav)} className='text-xl text-white'><FaBars /></button>
+                      <button onClick={() => setshownav(!shownav)} className='text-xl text-white' ><FaBars /></button>
                   </div>
                   {
                       shownav && <div onClick={() => setshownav(!shownav)} className='w-full h-screen  absolute top-0 left-0'></div>
@@ -41,9 +41,9 @@ const ResNav = () => {
                               <button onClick={()=>setshownav(!shownav)}><CiCircleRemove className='text-2xl font-dm text-black absolute top-3 right-3' /></button>
 
                               {
-                                  navItemes.map((item) => {
+                                  navItemes.map((item,idx) => {
 
-                                      return <li><Link className='text-xl font-Dm text-black' to={item.navpath}>{item.navcontent}</Link></li>
+                                      return <li key={idx}><Link className='text-xl font-Dm text-black' to={item.navpath}>{item.navcontent}</Link></li>
                                   })
                               }
                           </ul>

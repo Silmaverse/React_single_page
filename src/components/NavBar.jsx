@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import Logo from '../assets/images/logo.png'
 import { IoMdArrowDropup } from "react-icons/io";
 
-const NavBar = () => {
+const Navbar = () => {
     const navItems = [
      {
         navContent:'Home',
@@ -33,7 +33,7 @@ const NavBar = () => {
      ]
   return (
       <>
-          <nav id='Navbar' className='pt-[22px] hidden lg:block '>
+          <nav id='Navbar' className='pt-[22px] hidden lg:block absolute top-0 left-0 w-full z-20'>
               <div className="container ">
                   <div className="navRow flex justify-between">
                       <Link to='/' className="logo_col">
@@ -43,8 +43,8 @@ const NavBar = () => {
                           {
                               navItems.map((item, idx) => {
                                   return (
-                                      <ul >
-                                          <li className='relative group'>
+                                      <ul key={idx}>
+                                          <li  className='relative group'>
                                           
                                               <Link to={item.navpath} className=' text-xl font-normal text-primary font-Dm'>{item.navContent}</Link>
                                               {
@@ -52,9 +52,9 @@ const NavBar = () => {
                                                   <div className='w-[300px] p-3 rounded-[5px] bg-white absolute top-8 invisible opacity-0 group-hover:visible group-hover:opacity-100'>
                                                           <IoMdArrowDropup className='text-3xl text-white absolute top-[-18px] left-2'/>
                                                           <ul>
-                                                              {item.dropdown.map((item) => {
+                                                              {item.dropdown.map((item,idx) => {
                                                                   
-                                                                  return <li ><Link className='text-lg mb-5 inline-block font-Dm' to={item.dropLink}>{ item.dropContent}</Link></li>
+                                                                  return <li key={idx} ><Link  className='text-lg mb-5 inline-block font-Dm' to={item.dropLink}>{ item.dropContent}</Link></li>
                                                             })}
                                                   </ul>
                                               </div>
@@ -75,4 +75,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default Navbar
