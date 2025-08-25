@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Outlet } from 'react-router'
 import ResNav from '../components/ResNav'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/NavBar'
 
 
 const LayOutOne = () => {

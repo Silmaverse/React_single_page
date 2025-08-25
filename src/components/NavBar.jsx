@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import Logo from '../assets/images/logo.png'
 import { IoMdArrowDropup } from "react-icons/io";
 
-const Navbar = () => {
+const NavBar = () => {
     const navItems = [
      {
         navContent:'Home',
@@ -75,4 +75,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default NavBar
