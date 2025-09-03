@@ -9,7 +9,8 @@ const LayOutOne = () => {
   return (
       <>
        <Navbar/>
-      <ResNav/>
+      <ResNav />
+      
       <Outlet/>
           
       </>

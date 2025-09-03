@@ -38,16 +38,16 @@ const Banner = () => {
                           <Link to='/' className=" w-[248px] h-[48px]  rounded-[23px] bg-[#FFFFFF] text-[#0C0C0C] font-Dm text-xl font-normal flex justify-center items-center gap-[10px] "><IoIosArrowDroprightCircle className='text-[28px]' />Start your Free Trial</Link>
                           <p className='text-brand font-semibold font-roboto text-xl  mt-[40px]  lg:mt-[181px] mb-[5px]'>Trusted by Leading Brands</p>
                           <div className="brandImages lg:flex items-center flex flex-wrap lg:flex-nowrap">
-                              <div className="brand1 w-[147px]">
+                              <div className="brand1 w-[50px] lg:w-[147px]">
                                   <img src={ brand1} alt='brand1'/>
                               </div>
-                              <div className="brand1 w-[147px]">
+                              <div className="brand1 w-[50px] lg:w-[147px]">
                                   <img src={ brand2} alt='brand2' />
                               </div>
-                              <div className="brand1 w-[147px]">
+                              <div className="brand1 w-[50px] lg:w-[147px]">
                                   <img src={brand3} alt='brand3' />
                               </div>
-                              <div className="brand1 w-[221px]">
+                              <div className="brand1 w-[50px] lg:w-[221px]">
                                   <img src={ brand4} alt='brand4' />
                               </div>
                           </div>
