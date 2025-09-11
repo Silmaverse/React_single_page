@@ -32,7 +32,7 @@ const AboutUs = () => {
                         
                         start={0}
                         end={330}
-                        duration={1}
+                        duration={10}
                         useEasing={true}
                         separator=","
                         /> +</h2>
@@ -45,8 +45,8 @@ const AboutUs = () => {
                             <CountUp
                   
                     start={0}
-                    end={230git}
-                    duration={1}
+                    end={230}
+                    duration={10}
                     useEasing={true}
                     separator=","
                     />  +</h2>
