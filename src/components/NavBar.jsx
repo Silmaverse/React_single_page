@@ -33,8 +33,8 @@ const NavBar = () => {
      ]
   return (
       <>
-          <nav id='Navbar' className='pt-[22px] hidden lg:block absolute top-0 left-0 w-full z-20'>
-              <div className="container ">
+          <nav id='Navbar' className='pt-[22px] hidden lg:block absolute top-0 w-full z-20'>
+              <div className="container">
                   <div className="navRow flex justify-between">
                       <Link to='/' className="logo_col">
                           <img src={Logo } alt='logo' />
